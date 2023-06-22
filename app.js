@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -11,6 +9,32 @@ const contactContent = "Scelerisque eleifend donec pretium vulputate sapien. Rho
 const app = express();
 
 app.set('view engine', 'ejs');
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static('public'));
+
+
+// Get Request
+app.get('/', (req,res) => {
+    res.render('home', {homeStartingContent});
+});
+
+app.get('/about', (req,res) => {
+    res.render('about', {aboutContent});
+});
+
+app.get('/contact', (req,res) => {
+    res.render('contact', {contactContent});
+});
+
+app.get('/compose', (req,res) => {
+    res.render('compose');
+});
+
+
+app.post('/compose', (req,res) => {
+    const {postTitle, postBody} = req.body;
+    console.log(postTitle,postBody);
+})
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
