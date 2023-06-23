@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const ejs = require("ejs");
 const _ = require("lodash");
 const mainTexts = require(`${__dirname}/main-texts.js`)
+const currentDate = require(`${__dirname}/current-date.js`)
 
 const homeStartingContent = mainTexts.homeText;
 const aboutContent = mainTexts.aboutText;
@@ -49,7 +50,8 @@ app.get('/posts/:postName', (req,res) => {
 app.post('/compose', (req,res) => {
     const post = {
         title: req.body.postTitle,
-        content: req.body.postBody
+        content: req.body.postBody,
+        date: currentDate.getCurrentDate()
     }
     POSTS.push(post);
     res.redirect('/');
