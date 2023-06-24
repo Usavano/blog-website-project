@@ -57,21 +57,6 @@ app.post('/compose', (req,res) => {
     res.redirect('/');
 })
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static("public"));
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 app.listen(3000, function() {
   console.log("Server started on port 3000");
