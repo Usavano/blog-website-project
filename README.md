@@ -1,5 +1,5 @@
 # blog-website-project
-Its website was created to post your own little blogs. All blogs you have posted, you can see on home page with title, current date and time and main content, which contains only 85 symbols. To read more you can press the "Read More" link. 
+This website was created to post your own little blogs. All blogs you have posted, you can see on home page with title, current date and time and main content, which contains only 85 symbols. To read more you can press the "Read More" link. 
 You will be redirected to another page with hole blog!
 
 ## How to create blog?
